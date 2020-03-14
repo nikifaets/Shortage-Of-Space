@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/startfighter1.jpg-8e7fb1af9962bcfb02c752b66b05eebb.s3tc.stex"
-path.etc2="res://.import/startfighter1.jpg-8e7fb1af9962bcfb02c752b66b05eebb.etc2.stex"
+path.s3tc="res://.import/healer.jpg-62072bd30f26f9760c4f919458df1fa6.s3tc.stex"
+path.etc2="res://.import/healer.jpg-62072bd30f26f9760c4f919458df1fa6.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://startfighter1.jpg"
-dest_files=[ "res://.import/startfighter1.jpg-8e7fb1af9962bcfb02c752b66b05eebb.s3tc.stex", "res://.import/startfighter1.jpg-8e7fb1af9962bcfb02c752b66b05eebb.etc2.stex" ]
+source_file="res://Models/Healer/healer.jpg"
+dest_files=[ "res://.import/healer.jpg-62072bd30f26f9760c4f919458df1fa6.s3tc.stex", "res://.import/healer.jpg-62072bd30f26f9760c4f919458df1fa6.etc2.stex" ]
 
 [params]
 

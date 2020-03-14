@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/starfighter1.obj-711cd8e7fb5098b4397ff40b4d0b534a.mesh"
+
+[deps]
+
+files=[ "res://.import/starfighter1.obj-711cd8e7fb5098b4397ff40b4d0b534a.mesh" ]
+
+source_file="res://Models/Fighter/starfighter1.obj"
+dest_files=[ "res://.import/starfighter1.obj-711cd8e7fb5098b4397ff40b4d0b534a.mesh", "res://.import/starfighter1.obj-711cd8e7fb5098b4397ff40b4d0b534a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

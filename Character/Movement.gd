@@ -10,6 +10,7 @@ var target
 func _ready():
 	
 	destination = get_parent().translation
+	
 func _physics_process(delta):
 	
 	if not is_instance_valid(target):

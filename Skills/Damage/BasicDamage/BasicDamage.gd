@@ -8,7 +8,6 @@ func can_hit(var target):
 
 func set_caster(caster):
 	
-	print("dmg team ", caster.team)
 	self.caster = caster
 	$Buffer.caster = caster
 	if caster.team == 1:

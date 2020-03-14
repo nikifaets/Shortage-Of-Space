@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/healercheto.obj-96bba1f48afa8710d37dd6fcf3dd4c0c.mesh"
+
+[deps]
+
+files=[ "res://.import/healercheto.obj-96bba1f48afa8710d37dd6fcf3dd4c0c.mesh" ]
+
+source_file="res://Models/Healer/healercheto.obj"
+dest_files=[ "res://.import/healercheto.obj-96bba1f48afa8710d37dd6fcf3dd4c0c.mesh", "res://.import/healercheto.obj-96bba1f48afa8710d37dd6fcf3dd4c0c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

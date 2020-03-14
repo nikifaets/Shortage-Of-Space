@@ -17,13 +17,13 @@ func _process(delta):
 		var mass_heal_potential = 0
 		
 		target = choose_target()
-		
 		if is_instance_valid(target):
 			
-			if target.health == target.max_health:
+			if target.health >= target.max_health:
 				
-				movement.go_to_target(target)
-				has_target = true
+				if target.translation.distance_to(owner.translation) > 10:
+					movement.go_to_target(target)
+
 				return
 				
 			base_heal_potential = base_heal.get_potential_heal(target)
@@ -34,9 +34,14 @@ func _process(delta):
 		
 	if is_instance_valid(target) and has_target:
 		
+		print("has target")
 		if base_heal.can_heal(target):
 			
 			movement.stop_course()
+			target.health += 20
+			if target.health > 100:
+				target.health = 100
+			has_target = false
 			
 		else:
 				
@@ -65,5 +70,6 @@ func choose_target():
 				return ally
 			
 	# if tank not found
+
 	return get_parent().allies[0]
 	
