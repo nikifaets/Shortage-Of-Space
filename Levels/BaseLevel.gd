@@ -39,7 +39,7 @@ func load_units_list():
 						
 						continue
 					
-					if i ==j:
+					if i == j:
 						
 						char_allies.push_back(next_char)
 						
