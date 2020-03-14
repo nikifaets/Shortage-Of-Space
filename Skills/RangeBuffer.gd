@@ -2,22 +2,18 @@ extends Area
 
 var targets = []
 var team_filter = 0
-
-func set_team_filter(var team_filter):
+var caster
 	
-	self.team_filter = team_filter
-
-
 func _on_Buffer_body_entered(character):
 	
-	if(character.team == team_filter):
+	if(team_filter == character.team):
 		
 		targets.push_back(character)
 
 
 func _on_Buffer_body_exited(character):
 	
-	if(character.team == team_filter):
+	if(team_filter == character.team):
 		
 		targets.erase(character)
 		

@@ -9,12 +9,7 @@
 [node name="Behavior" parent="." index="3"]
 script = ExtResource( 2 )
 
-[node name="Abilities" type="Spatial" parent="Behavior" index="0"]
-
 [node name="BasicHeal" parent="Behavior/Abilities" index="0" instance=ExtResource( 3 )]
-
-[node name="CollisionShape" parent="Behavior/Abilities/BasicHeal/Buffer" index="0"]
-transform = Transform( 7.55015, 0, 0, 0, 7.55015, 0, 0, 0, 7.55015, 0, 0, 0 )
 
 [editable path="Behavior/Abilities/BasicHeal"]
 

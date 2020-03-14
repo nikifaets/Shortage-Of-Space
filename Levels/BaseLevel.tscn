@@ -19,20 +19,13 @@ script = ExtResource( 2 )
 
 [node name="Team0" type="Node" parent="Teams"]
 
-[node name="Warrior" parent="Teams/Team0" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.35438, 0 )
-
-[node name="Healer" parent="Teams/Team0" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.48899, 20.4904 )
-
-[node name="Warrior2" parent="Teams/Team0" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.026, 5.94636, 17.1278 )
-health = 80
-
 [node name="Team1" type="Node" parent="Teams"]
 
 [node name="Warrior" parent="Teams/Team1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5296, 4.20886, 0 )
+
+[node name="Healer" parent="Teams/Team1" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.81173, 2.88809, 26.0019 )
 
 [node name="Terrain" type="StaticBody" parent="."]
 collision_layer = 2

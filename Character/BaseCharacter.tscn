@@ -24,3 +24,5 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="Behavior" type="Spatial" parent="."]
+
+[node name="Abilities" type="Spatial" parent="Behavior"]

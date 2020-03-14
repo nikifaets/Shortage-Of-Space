@@ -9,10 +9,14 @@ var target
 var target_available = false
 var enemies = []
 var allies = []
-	
+		
 func set_team(var team):
 	
 	self.team = team
+	var abilities = $Behavior/Abilities.get_children()
+	for ab in abilities:
+		
+		ab.set_caster(self)
 
 func get_team(var team):
 	

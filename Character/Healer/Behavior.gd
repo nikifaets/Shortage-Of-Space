@@ -23,8 +23,8 @@ func _process(delta):
 			if target.health == target.max_health:
 				
 				movement.go_to_target(target)
+				has_target = true
 				return
-				
 				
 			base_heal_potential = base_heal.get_potential_heal(target)
 			
@@ -32,7 +32,7 @@ func _process(delta):
 				
 				has_target = true
 		
-	elif is_instance_valid(target) and has_target:
+	if is_instance_valid(target) and has_target:
 		
 		if base_heal.can_heal(target):
 			

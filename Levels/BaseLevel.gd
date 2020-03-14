@@ -20,7 +20,7 @@ func assign_teams():
 		var characters = next_team.get_children()
 		teams.push_back(characters)
 		for character in characters:
-				
+			
 			character.set_team(i)
 				
 func load_units_list():
