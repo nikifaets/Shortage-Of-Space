@@ -7,7 +7,7 @@ var movement = get_parent().find_node("Movement")
 onready var basic_damage = get_node("Abilities/BasicDamage")
 
 func _process(delta):
-	
+			
 	if not has_target:
 		
 		target = choose_target()
@@ -16,7 +16,7 @@ func _process(delta):
 			
 	if is_instance_valid(target) and has_target and not target_reached:
 		
-		if basic_damage.can_hit(target):
+		if basic_damage.is_in_range(target):
 			
 			target_reached = true
 			movement.stop_course()
@@ -24,7 +24,14 @@ func _process(delta):
 		if not target_reached:
 			
 			movement.go_to_target(target)
-
+	
+	if is_instance_valid(target) and has_target:
+		
+		#choose what to cast
+		if basic_damage.can_shoot(target):
+			
+			basic_damage.shoot(target)
+		
 	elif not is_instance_valid(target):
 		
 		has_target = false

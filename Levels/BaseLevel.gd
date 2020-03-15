@@ -33,6 +33,7 @@ func load_enemies():
 	for enemy in enemy_nodes:
 		
 		enemy.set_team(1)
+		enemy.connect("die", self, "on_unit_died", [enemy])
 		enemies.push_back(enemy)
 		
 	for enemy in enemy_nodes:
@@ -69,3 +70,15 @@ func handle_input():
 		
 		if $UI.is_unused():
 			summon(selected)
+			
+func on_unit_died(unit):
+	
+	print("die")
+	enemies.erase(unit)
+	allies.erase(unit)
+	for enemy in enemies:
+		enemy.refresh_enemies(enemies)
+	for ally in allies:
+		ally.refresh_allies(allies)
+	
+	unit.queue_free()

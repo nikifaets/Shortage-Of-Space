@@ -9,6 +9,7 @@
 [node name="Warrior" parent="Enemies" index="0" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.7347, 0 )
 collision_layer = 1
+health = 60
 
 [node name="Camera" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 0.472827, 0.881155, 0, -0.881155, 0.472827, 0, 62.2037, 0 )
