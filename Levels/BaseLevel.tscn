@@ -1,15 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/UI.gd" type="Script" id=1]
 [ext_resource path="res://Levels/BaseLevel.gd" type="Script" id=2]
+[ext_resource path="res://Levels/3DCursor.gd" type="Script" id=3]
 
 [sub_resource type="BoxShape" id=1]
+extents = Vector3( 1.20819, 1, 1.19307 )
 
 [sub_resource type="CubeMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.92549, 0.607843, 0, 1 )
 metallic = 0.45
+
+[sub_resource type="CapsuleMesh" id=4]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 2 )
@@ -22,7 +26,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="Terrain"]
-transform = Transform( 41.5763, 0, 0, 0, 1, 0, 0, 0, 41.5763, 0, 0, 0 )
+transform = Transform( 310.825, 0, 0, 0, 1, 0, 0, 0, 41.5763, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Terrain"]
@@ -64,3 +68,10 @@ __meta__ = {
 }
 
 [node name="PlayerArmy" type="Node" parent="."]
+
+[node name="3DCursor" type="RayCast" parent="."]
+script = ExtResource( 3 )
+
+[node name="Cursor" type="MeshInstance" parent="3DCursor"]
+mesh = SubResource( 4 )
+material/0 = null

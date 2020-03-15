@@ -7,3 +7,9 @@
 
 [node name="PlayerArmy" parent="." index="5"]
 script = ExtResource( 2 )
+
+[node name="3DCursor" parent="." index="6"]
+collision_mask = 3
+
+[node name="Cursor" parent="3DCursor" index="0"]
+transform = Transform( 3, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 28.9656, 55.691 )

@@ -10,8 +10,27 @@ func _ready():
 	
 	call_deferred("load_buttons")
 
+func is_unused():
+	
+	for button in buttons:
+		
+		if button.is_hovered() or button.is_pressed():
+			return false
+	
+	return true
+	
+func update_buttons():
+	
+	for i in range(owner.army.size()):
+		
+		var label = owner.army.keys()[i]
+		var count = owner.army.values()[i]
+		
+		buttons[i].text = label + ": " + str(count)
+		
 func load_buttons():
 	
+		
 	for i in range(owner.army.size()):
 		
 		var label = owner.army.keys()[i]
@@ -20,6 +39,7 @@ func load_buttons():
 		var button = design_button(label, count)
 		
 		button.connect("button_up", self, "on_button_released", [button])
+
 		buttons.push_back(button)
 	
 	for button in buttons:
