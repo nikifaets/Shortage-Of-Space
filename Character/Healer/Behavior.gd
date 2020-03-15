@@ -13,43 +13,41 @@ func _process(delta):
 	#choose action - base heal or mass heal
 	if not has_target:
 		
-		var base_heal_potential = 0
-		var mass_heal_potential = 0
-		
 		target = choose_target()
+		
 		if is_instance_valid(target):
 			
-			if target.health >= target.max_health:
+			var potential_basic_heal = $Abilities/BasicHeal.get_potential_heal(target)
+			var potential_mass_heal = 0
+			
+			var potential_heal = max(potential_basic_heal, potential_mass_heal)
+			var chosen_ability
+			
+			if potential_heal == 0:
 				
-				if not base_heal.can_heal(target):
-					movement.go_to_target(target)
-				
-				else:
-					
-					movement.stop_course()
-					
+				#there is noone to heal, just move towards a target
+				movement.go_to_target(target)
 				return
 				
-			base_heal_potential = base_heal.get_potential_heal(target)
-			
-			if base_heal_potential > mass_heal_potential:
+			if potential_basic_heal > potential_mass_heal:
 				
 				has_target = true
+	
+	elif has_target and is_instance_valid(target):
 		
-	if is_instance_valid(target) and has_target:
-		
-		if base_heal.can_heal(target) and target.health < target.max_health:
+		if base_heal.can_heal(target):
 			
-			movement.stop_course()
-			target.health += 20
-			if target.health > 100:
-				target.health = 100
+			base_heal.cast(target)
 			has_target = false
 			
 		else:
-				
+			
 			movement.go_to_target(target)
-
+			
+	elif not is_instance_valid(target):
+		
+		has_target = false
+				
 func calculate_priority_score(target, health_score, dist_score):
 	
 	var dist = owner.translation.distance_to(target.translation)

@@ -22,8 +22,7 @@ func _physics_process(delta):
 		#print(translation.distance_to(target.translation))
 		if translation.distance_to(target.translation) < min_dist:
 			
-			print("reached")
-			caster.on_target_reached(target)
+			target.take_damage(caster.dmg)
 			
 			queue_free()
 			

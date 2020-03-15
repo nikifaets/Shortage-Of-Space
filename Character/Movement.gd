@@ -1,55 +1,37 @@
 extends Node
 
-
-var direction = Vector3()
-var destination = Vector3()
-var course_set = false
-var dist_to_target = 3
+var up = Vector3(0,1,0)
+onready var states = {"Maneuever" : $Maneuever, "Chase" : $Chase}
+onready var curr_state = states["Chase"]
 var target
 
-func _ready():
-	
-	destination = get_parent().translation
-	
 func _physics_process(delta):
 	
 	if not is_instance_valid(target):
+		return
 		
-		stop_course()
-
-	elif course_set:
+	curr_state.move(delta)
+	owner.look_at(target.translation, up)
+	
+func change_state(new_state):
+	
+	if curr_state == states[new_state]:
+		return
 		
-		if not is_target_reached():
-			
-			direction = target.translation - get_parent().translation
-			owner.look_at(target.translation, Vector3(0,1,0))
-			owner.translation += direction.normalized()*delta*owner.speed
-			
-		else:
-			
-			course_set = false
-			destination = owner.translation
+	curr_state.exit_state()
+	curr_state = states[new_state]
+	curr_state.enter_state()
 
-
-func go_to_target(var target):
+func go_to_target(target):
 	
 	self.target = target
-	set_destination(target.translation)
-	
-func set_destination(var destination):
-	
-	direction = destination - get_parent().translation
-	self.destination = destination
-	course_set = true
-	
-func is_target_reached():
-	
-	return get_parent().translation.distance_to(destination) <= dist_to_target
+	change_state("Chase")
 
-func stop_course():
+func maneuever(target):
 	
-	course_set = false
-	destination = owner.translation
+	self.target = target
+	change_state("Maneuever")
+	
 
 	
 	

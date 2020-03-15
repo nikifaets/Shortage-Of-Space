@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Character/BaseCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Character/Movement.gd" type="Script" id=2]
+[ext_resource path="res://Character/Maneuever.gd" type="Script" id=3]
+[ext_resource path="res://Character/Chase.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -16,6 +18,12 @@ script = ExtResource( 1 )
 
 [node name="Movement" type="Node" parent="."]
 script = ExtResource( 2 )
+
+[node name="Maneuever" type="Node" parent="Movement"]
+script = ExtResource( 3 )
+
+[node name="Chase" type="Node" parent="Movement"]
+script = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )

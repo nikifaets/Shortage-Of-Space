@@ -7,6 +7,7 @@
 [ext_resource path="res://Character/Healer/Meta.gd" type="Script" id=5]
 
 [node name="Healer" instance=ExtResource( 1 )]
+speed = 15
 
 [node name="MeshInstance" parent="." index="2"]
 visible = false
@@ -16,6 +17,8 @@ script = ExtResource( 2 )
 
 [node name="BasicHeal" parent="Behavior/Abilities" index="0" instance=ExtResource( 3 )]
 
+[node name="GlobalCooldown" type="Timer" parent="Behavior" index="1"]
+
 [node name="Spatial" parent="." index="4" instance=ExtResource( 4 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
@@ -23,5 +26,3 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0
 script = ExtResource( 5 )
 
 [editable path="Behavior/Abilities/BasicHeal"]
-
-[editable path="Behavior/Abilities/BasicHeal/Buffer"]

@@ -6,7 +6,9 @@
 [node name="BasicDamage" type="Spatial"]
 script = ExtResource( 2 )
 
-[node name="Buffer" parent="." instance=ExtResource( 1 )]
-
 [node name="Cooldown" type="Timer" parent="."]
+
+[node name="Buffer" parent="." instance=ExtResource( 1 )]
 [connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]
+
+[editable path="Buffer"]
