@@ -22,6 +22,7 @@ func _physics_process(delta):
 		if not is_target_reached():
 			
 			direction = target.translation - get_parent().translation
+			owner.look_at(target.translation, Vector3(0,1,0))
 			owner.translation += direction.normalized()*delta*owner.speed
 			
 		else:

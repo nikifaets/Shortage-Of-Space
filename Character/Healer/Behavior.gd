@@ -21,9 +21,13 @@ func _process(delta):
 			
 			if target.health >= target.max_health:
 				
-				if target.translation.distance_to(owner.translation) > 10:
+				if not base_heal.can_heal(target):
 					movement.go_to_target(target)
-
+				
+				else:
+					
+					movement.stop_course()
+					
 				return
 				
 			base_heal_potential = base_heal.get_potential_heal(target)
@@ -34,8 +38,7 @@ func _process(delta):
 		
 	if is_instance_valid(target) and has_target:
 		
-		print("has target")
-		if base_heal.can_heal(target):
+		if base_heal.can_heal(target) and target.health < target.max_health:
 			
 			movement.stop_course()
 			target.health += 20
@@ -47,29 +50,62 @@ func _process(delta):
 				
 			movement.go_to_target(target)
 
+func calculate_priority_score(target, health_score, dist_score):
+	
+	var dist = owner.translation.distance_to(target.translation)
+	var heal = target.max_health - target.health
+	
+	#lower dist = higher score
+	return  health_score * heal - dist * dist_score
+	
 func comp_health(var ally1, var ally2):
 	
-	return ally1.health < ally2.health
+	var eps = 1e-2
+	var health_score = 0.7
+	var dist_score = 0.3
+	var dist1 = owner.translation.distance_to(ally1.translation) + eps
+	var heal1 = ally1.max_health - ally1.health
+	
+	var dist2 = owner.translation.distance_to(ally2.translation) + eps
+	var heal2 = ally2.max_health - ally2.health
+	
+	if heal1 == 0 and heal2 == 0:
+		
+		return dist1 > dist2
+		
+	dist1 = dist1 / max(dist1, dist2)
+	heal1 = heal1 / max(heal1, heal2)
+	dist2 = dist2 / max(dist1, dist2)
+	heal2 = heal2 / max(heal1, heal2)
+	
+	var score1 = health_score * heal1 - dist_score * dist1
+	var score2 = health_score * heal2 - dist_score * dist2
+
+	return score1 > score2
 	
 func choose_target():
 	
-	if get_parent().allies.size() == 0:
+	if owner.allies.size() == 0:
 		
 		return
 		
-	get_parent().allies.sort_custom(self, "comp_health")
+	owner.allies.sort_custom(self, "comp_health")
 	
 	#search for a tank if all are full health
-	var first_wounded = get_parent().allies[0]
+	var first_wounded = owner.allies[0]
 	
 	if first_wounded.health == first_wounded.max_health:
-		for ally in get_parent().allies:
+		for ally in owner.allies:
 			
 			if ally.role == "Tank":
 				
 				return ally
+				
+		if first_wounded == owner and owner.allies.size() > 1:
 			
-	# if tank not found
+			return owner.allies[1]
+			
+	# if tank not found and target is not self
 
-	return get_parent().allies[0]
+	return first_wounded
 	

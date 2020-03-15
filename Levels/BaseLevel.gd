@@ -7,33 +7,62 @@ var labels = {"Healer" : Healer, "Warrior" : Warrior}
 
 onready var camera = get_node("Camera")
 
-var selected
+var ground_margin = 5
+var enemies = []
+var allies = []
+var selected = labels.keys()[0]
 
 onready var army = $PlayerArmy.army
 
+func _ready():
+	
+	load_enemies()
+	
 func _process(delta):
 	
 	handle_input()
 
 func set_selected(label):
 	
-	print(label)
 	selected = label
 
-func summon(type):
+func load_enemies():
 	
-	print("summon selected ", selected)
+	var enemy_nodes = find_node("Enemies").get_children()
+	
+	for enemy in enemy_nodes:
+		
+		enemy.set_team(1)
+		enemies.push_back(enemy)
+		
+	for enemy in enemy_nodes:
+		
+		enemy.refresh_allies(enemies)
+		enemy.refresh_enemies(allies)
+
+func summon(type):
+
+	if army[type] > 0:
+		var new_ship = labels[selected].instance()
+		allies.push_back(new_ship)
+		new_ship.set_team(0)
+		new_ship.refresh_enemies(enemies)
+		new_ship.translation = $"3DCursor".get_cursor_coords() + Vector3(0, ground_margin, 0)
+		add_child(new_ship)
+	
+	for enemy in enemies:
+		
+		enemy.refresh_enemies(allies)
+	
+	for ally in allies:
+		
+		ally.refresh_allies(allies)
+		
 	army[type] -= 1
 	army[type] = max(army[type], 0)
-	print("load buttons again")
 	$UI.update_buttons()
 	
-	var new_ship = labels[selected].instance()
-	new_ship.set_team(0)
-	new_ship.translation = $"3DCursor".get_cursor_coords()
-	add_child(new_ship)
-	
-	
+
 func handle_input():
 	
 	if Input.is_action_just_released("summon"):

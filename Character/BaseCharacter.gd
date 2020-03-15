@@ -18,10 +18,6 @@ func set_team(var team):
 		
 		ab.set_caster(self)
 
-func get_team(var team):
-	
-	self.team = team
-	
 func set_target(var target):
 	
 	self.target = target

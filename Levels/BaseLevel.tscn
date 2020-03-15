@@ -35,7 +35,7 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 62.1228, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.4608, 0 )
 far = 181.4
 
 [node name="OmniLight" type="OmniLight" parent="."]
