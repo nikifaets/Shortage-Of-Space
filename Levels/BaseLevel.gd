@@ -3,8 +3,9 @@ extends Spatial
 var Giotto = preload("res://Character/Healer/Giotto/Giotto.tscn")
 var Leshy = preload("res://Character/Warrior/Leshy/Leshy.tscn")
 var Wendigo = preload("res://Character/Warrior/Wendigo/Wendigo.tscn")
+var Shanshen = preload("res://Character/Tank/Shanshen/Shanshen.tscn")
 
-var labels = {"Leshy" : Leshy, "Giotto" : Giotto, "Wendigo" : Wendigo}
+var labels = {"Leshy" : Leshy, "Giotto" : Giotto, "Wendigo" : Wendigo, "Shanshen" : Shanshen}
 
 onready var camera = get_node("Camera")
 

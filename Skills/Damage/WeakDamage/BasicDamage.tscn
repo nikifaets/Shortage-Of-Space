@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Skills/Damage/BaseDamage/Missile.gd" type="Script" id=1]
+[ext_resource path="res://Skills/Damage/BaseDamage/BasicDamage.tscn" type="PackedScene" id=2]
+
+[node name="BasicDamage" instance=ExtResource( 2 )]
+
+[node name="Missile" type="Node" parent="." index="2"]
+script = ExtResource( 1 )
+
+[editable path="Buffer"]

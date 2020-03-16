@@ -12,8 +12,8 @@ radius = 78.1735
 
 [node name="Wendigo" instance=ExtResource( 1 )]
 speed = 11
-max_health = 200
-health = 200
+max_health = 250
+health = 250
 
 [node name="CollisionShape" parent="." index="1"]
 shape = SubResource( 1 )

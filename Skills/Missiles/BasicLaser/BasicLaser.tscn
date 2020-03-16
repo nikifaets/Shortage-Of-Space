@@ -11,4 +11,10 @@ speed = 80
 [node name="BasicLaser" parent="Missile" index="0"]
 transform = Transform( 3.9642, 0, 0, 0, -6.45851e-07, -3.9642, 0, 5.14069, -8.37526e-07, 0, 0, 2.57942 )
 
+[node name="OmniLight" type="OmniLight" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.38369 )
+light_color = Color( 0.878431, 0.917647, 0.180392, 1 )
+light_energy = 13.05
+omni_range = 0.9
+
 [editable path="Missile"]
