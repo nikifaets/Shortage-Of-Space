@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/spaceshipCrash.wav-fe87cbd8a5a65a9d930dab941b208570.sample"
+
+[deps]
+
+source_file="res://Sounds/spaceshipCrash.wav"
+dest_files=[ "res://.import/spaceshipCrash.wav-fe87cbd8a5a65a9d930dab941b208570.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

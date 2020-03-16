@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sounds/mainMenuMaster.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sounds/Scenes/AudioStreamPlayer.tscn" type="PackedScene" id=2]
+
+[node name="MainMenu" instance=ExtResource( 2 )]
+stream = ExtResource( 1 )

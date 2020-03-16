@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/majorLaser.wav-87546af2939e0bd7e2feef21d288cb4e.sample"
+
+[deps]
+
+source_file="res://Sounds/majorLaser.wav"
+dest_files=[ "res://.import/majorLaser.wav-87546af2939e0bd7e2feef21d288cb4e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
