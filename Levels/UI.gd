@@ -1,15 +1,21 @@
 extends Control
 
+var HealthBar = preload("HealthBar.tscn")
 
 var buttons = []
 var color_selected = Color(0.5, 0.5, 0.5, 1)
 var color_normal = Color(0.6, 0.6, 0.6, 1)
 var selected
+var units = {}
 
 func _ready():
 	
 	call_deferred("load_buttons")
 
+func _process(delta):
+	pass
+	update_bars()
+	
 func is_unused():
 	
 	for button in buttons:
@@ -18,6 +24,48 @@ func is_unused():
 			return false
 	
 	return true
+
+func create_health_bars():
+	
+	for enemy in owner.enemies():
+		load_health_bar(enemy)
+		
+	for ally in owner.allies:
+		load_health_bar(ally)
+		
+func load_health_bar(unit):
+	
+	var bar = HealthBar.instance()
+	add_child(bar)
+	units[unit] = bar
+	
+func update_bars():
+	
+	var margin = 40
+	#clean dictionary
+	for unit in units.keys():
+		if not is_instance_valid(unit):
+			units[unit].queue_free()
+			units.erase(unit)
+	
+	#add new bars
+	for enemy in owner.enemies:
+		if not units.has(enemy):
+			load_health_bar(enemy)
+			
+	for ally in owner.allies:
+		if not units.has(ally):
+			load_health_bar(ally)
+			
+	for unit in units.keys():
+		
+		var screen_cords = owner.find_node("Camera").unproject_position(unit.translation)
+		var bar_pos = screen_cords + Vector2(0, margin)
+		units[unit].rect_position = bar_pos
+		units[unit].max_value = unit.max_health
+		units[unit].value = unit.health
+	
+	
 	
 func update_buttons():
 	
@@ -69,7 +117,6 @@ func on_button_released(button):
 func design_button(label, count):
 	
 	var button = Button.new()
-	#button.expand_icon = true
 	var texture = ImageTexture.new()
 	var path = "res://Icons/" + label + ".png"
 	texture.load(path)

@@ -9,7 +9,8 @@ var target
 var target_available = false
 var enemies = []
 var allies = []
-		
+signal die
+
 func set_team(var team):
 	
 	self.team = team
@@ -33,5 +34,19 @@ func refresh_enemies(var enemies):
 func refresh_allies(allies):
 	
 	self.allies = allies
+	
+func take_damage(dmg):
+	
+	health -= dmg
+	
+	if health <= 0:
+		
+		emit_signal("die")
+
+func heal(dmg):
+	
+	health += dmg
+	if health > max_health:
+		health = max_health
 	
 

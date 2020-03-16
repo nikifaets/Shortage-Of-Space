@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SmallLasers.obj-83b96c43ccaa858d5c6cf1412f234949.mesh"
+
+[deps]
+
+files=[ "res://.import/SmallLasers.obj-83b96c43ccaa858d5c6cf1412f234949.mesh" ]
+
+source_file="res://Models/Missiles/BasicLaser/SmallLasers.obj"
+dest_files=[ "res://.import/SmallLasers.obj-83b96c43ccaa858d5c6cf1412f234949.mesh", "res://.import/SmallLasers.obj-83b96c43ccaa858d5c6cf1412f234949.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

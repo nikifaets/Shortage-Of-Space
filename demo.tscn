@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.47534
+margin_top = 2.15851
+margin_right = 6.47534
+margin_bottom = 2.15851
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1094.0
+margin_bottom = 630.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ViewportContainer" type="ViewportContainer" parent="HBoxContainer"]
+margin_right = 787.0
+margin_bottom = 630.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="HBoxContainer/ViewportContainer"]
+size = Vector2( 787, 465 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="HBoxContainer/ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.82562, 3.98114 )
+
+[node name="MeshInstance" type="MeshInstance" parent="HBoxContainer/ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47471, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null

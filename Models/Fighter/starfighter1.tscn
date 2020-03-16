@@ -3,8 +3,6 @@
 [ext_resource path="res://Models/Fighter/startfighter1.jpg" type="Texture" id=1]
 [ext_resource path="res://Models/Fighter/starfighter1.obj" type="ArrayMesh" id=2]
 
-
-
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.941176, 0.654902, 0.870588, 1 )
 albedo_texture = ExtResource( 1 )

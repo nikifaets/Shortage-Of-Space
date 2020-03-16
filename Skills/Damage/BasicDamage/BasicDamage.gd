@@ -1,8 +1,19 @@
 extends Spatial
 
-var caster
+var Missile = preload("res://Skills/Missiles/BasicLaser/BasicLaser.tscn")
 
-func can_hit(var target):
+var caster
+var cd_ready = true
+export var dmg = 10
+export var area = 10
+var can_shoot 
+
+	
+func can_shoot(var target):
+	
+	return cd_ready and is_in_range(target)
+	
+func is_in_range(var target):
 	
 	return $Buffer.targets.has(target)
 
@@ -15,3 +26,24 @@ func set_caster(caster):
 	else:
 		$Buffer.team_filter = 1
 	
+func shoot(target):
+	
+	if can_shoot(target):
+		
+		can_shoot = true
+		var missile = Missile.instance()
+		get_tree().get_root().add_child(missile)
+		missile.translation = caster.translation
+	
+		missile.shoot(self, target)
+		$Cooldown.start()
+		cd_ready = false
+
+func on_target_reached(target):
+	
+	if is_instance_valid(target):
+		target.take_damage(dmg)
+		
+func _on_Cooldown_timeout():
+	
+	cd_ready = true

@@ -16,8 +16,7 @@ func get_cursor_coords():
 	return to_global($Cursor.translation)
 	
 func handle_input():
-	
-		
+			
 	var mouse_coords = get_viewport().get_mouse_position()
 	var origin = camera.project_ray_origin(mouse_coords)
 	var normal = camera.project_ray_normal(mouse_coords)
