@@ -5,4 +5,7 @@
 [node name="ShipItem" instance=ExtResource( 1 )]
 
 [node name="Title" parent="VerticalContainer" index="0"]
-text = "Ship 2"
+text = "Leshy"
+
+[node name="ShortDescription" parent="VerticalContainer" index="1"]
+text = "Leshy , everybody has heard of that name. “Fast, robust, always ready”"

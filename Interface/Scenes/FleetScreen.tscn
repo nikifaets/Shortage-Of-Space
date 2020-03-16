@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Interface/Resources/baloochettan.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Interface/Scenes/FleetScreen.gd" type="Script" id=2]
@@ -6,7 +6,9 @@
 [ext_resource path="res://Interface/Components/ShipItemButtons/ShipItemInherited3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Interface/Components/ShipItemButtons/ShipItemInherited1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Interface/Components/ShipItemButtons/ShipItemInherited2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Interface/Scenes/showcase.gd" type="Script" id=7]
 [ext_resource path="res://Interface/Resources/baloochettan_header.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Interface/Components/MenuButtons/BackButton.tscn" type="PackedScene" id=9]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -19,6 +21,8 @@ __meta__ = {
 [node name="Core" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 2.0
+margin_bottom = 12.0
 custom_constants/separation = 24
 __meta__ = {
 "_edit_use_anchors_": false
@@ -43,7 +47,8 @@ render_target_update_mode = 3
 [node name="Camera" type="Camera" parent="Core/LeftSegment/ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 3.5, 5 )
 
-[node name="Ships" type="Node" parent="Core/LeftSegment/ViewportContainer/Viewport"]
+[node name="Ships" type="Spatial" parent="Core/LeftSegment/ViewportContainer/Viewport"]
+script = ExtResource( 7 )
 
 [node name="DetailsContainer" type="HBoxContainer" parent="Core/LeftSegment"]
 margin_top = 440.0
@@ -101,38 +106,46 @@ custom_fonts/normal_font = ExtResource( 1 )
 text = "Giotto is a Healer Spaceship designed by the Italians before The War started. The Italian engineers really did an outstanding job with this one. It utilizes second generation Gluon Weld Laser  “GW ” which is able to stich space craft holes bigger than a dinglebop from a distance of two moon years. Giotto has one more trick up its sleeve they don’t call these spaceships HP Wasps for nothing. That small healer packs a very powerful IP404 Thruster Engine which is capable of 5 tons fire spiting thrust at a flick of a switch.
 "
 
-[node name="ShipList" type="VBoxContainer" parent="Core"]
+[node name="VSeparator2" type="VSeparator" parent="Core"]
 margin_left = 854.0
-margin_right = 1254.0
+margin_right = 858.0
+margin_bottom = 732.0
+
+[node name="ShipList" type="VBoxContainer" parent="Core"]
+margin_left = 882.0
+margin_right = 1282.0
 margin_bottom = 732.0
 rect_min_size = Vector2( 400, 720 )
 
 [node name="ShipItem" parent="Core/ShipList" instance=ExtResource( 5 )]
 ship_id = "0"
-ship_scene_path = "res://Models/Healer/healer.tscn"
-lore = "asdasdasdqwzx,c,poq,wpomniamdsiqw"
+ship_scene_path = "res://Models/Giotto/Giotto.tscn"
+ship_type = "Giotto"
+lore = "Giotto is a Healer Spaceship designed by the Italians before The War started. The Italian engineers really did an outstanding job with this one. It utilizes second generation Gluon Weld Laser  “GW ” which is able to stich space craft holes bigger than a dinglebop from a distance of two moon years. Giotto has one more trick up its sleeve they don’t call these spaceships HP Wasps for nothing. That small healer packs a very powerful IP404 Thruster Engine which is capable of 5 tons fire spiting thrust at a flick of a switch."
 abilities = [ "Nani", "Nani2", "Nani3" ]
 
 [node name="ShipItem2" parent="Core/ShipList" instance=ExtResource( 6 )]
 margin_top = 184.0
 margin_bottom = 364.0
-ship_scene_path = "res://Models/Fighter/starfighter1.tscn"
-ship_type = "Ship2"
-lore = "qweqweqwewqe"
+ship_scene_path = "res://Models/Leshy/Leshy.tscn"
+ship_type = "Leshy"
+lore = "Leshy , everybody has heard of that name. “Fast, robust, always ready” that’s the motto of every Leshy crew. Those guys have been to every place in the Galaxy from planet Earth to the far lands of Azeroth. There is a rumor that a small squad of 8 once managed to withstand 43 hours of artillery barrage I can imagine only imagine the skill of the General that day, a true hero!"
 abilities = [ "Can Drink?", "Can sleep?" ]
 
 [node name="ShipItem3" parent="Core/ShipList" instance=ExtResource( 4 )]
 margin_top = 368.0
 margin_bottom = 548.0
-ship_scene_path = "res://Models/Healer/healer.tscn"
-ship_type = "Ship3"
-lore = "asdasdsadsadsadasd"
+ship_scene_path = "res://Models/Shanshen/Shanshen.tscn"
+ship_type = "Shanshen"
+lore = "Tough times call for tough armor. Speaking of hard steel Shanshen is one of a kind Tank Spaceship. Your enemies have heard of it, heck if you haven’t heard of them, they might have even seen one. China really knows the good craft of metallurgy and the punch of that beast of a spaceship. Chinese engineers have installed massive artillery battery accompanied with the latest sights. Manned by one of the best squads in the whole army this unit is sure to make an impact on the battlefield. "
 abilities = [ "Maybe, just maybe die", "is gay", "nice", "profit" ]
 
 [node name="ShipItem4" parent="Core/ShipList" instance=ExtResource( 3 )]
 margin_top = 552.0
 margin_bottom = 732.0
-ship_scene_path = "res://Models/Fighter/starfighter1.tscn"
-ship_type = "Ship4"
-lore = "asdaasdqweqdasdqweqdasd"
+ship_scene_path = "res://Models/Wendigo/Wendigo.tscn"
+ship_type = "Windigo"
+lore = "Maybe things didn’t turn out exactly the way you intended. Big-headed, quick-tempered, the boys won’t like it but you know it’s the right, the only right choice – Wendigo. Don’t mind the sluggishness this Fighter Spaceship is the definition of hard punch. Its powerful blasters can punch a hole through everything just be gentle when giving orders, friendly fire is on."
 abilities = [ "The ability to suck dicks", "Maybe that is cool", "nicenicenicenice" ]
+
+[node name="BackButton" parent="." instance=ExtResource( 9 )]

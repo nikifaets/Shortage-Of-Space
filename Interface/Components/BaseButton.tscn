@@ -3,13 +3,12 @@
 [ext_resource path="res://Interface/Resources/baloochettan.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Interface/Components/BaseButton.gd" type="Script" id=2]
 
-
 [node name="MenuButton" type="Button"]
 margin_top = 50.0
-margin_right = 1040.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 100, 100 )
+margin_right = 100.0
+margin_bottom = 100.0
 flat = true
+align = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -19,10 +18,9 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -182.0
-margin_right = 182.0
-margin_bottom = -7.00001
-rect_min_size = Vector2( 360, 90 )
+margin_left = -50.0
+margin_right = 64.0
+margin_bottom = -21.0
 custom_fonts/font = ExtResource( 1 )
 text = "Menu Button"
 __meta__ = {
