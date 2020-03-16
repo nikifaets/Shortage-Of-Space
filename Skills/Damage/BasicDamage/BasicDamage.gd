@@ -1,13 +1,16 @@
 extends Spatial
 
 onready var Missile = find_node("Missile").missile
-
+onready var sound = find_node("Missile").sound.instance()
 var caster
 var cd_ready = true
 export var dmg = 10
 export var area = 10
 var can_shoot 
 
+func _ready():
+	
+	add_child(sound)
 	
 func can_shoot(var target):
 	
@@ -30,6 +33,7 @@ func shoot(target):
 	
 	if can_shoot(target):
 		
+		sound.play()
 		can_shoot = true
 		var missile = Missile.instance()
 		get_tree().get_root().add_child(missile)
