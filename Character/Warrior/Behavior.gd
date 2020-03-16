@@ -7,13 +7,15 @@ var movement = get_parent().find_node("Movement")
 onready var basic_damage = get_node("Abilities/BasicDamage")
 
 func _process(delta):
-			
+	
+	owner.find_node("Movement").target = target
 	if not has_target:
 		
 		target = choose_target()
 		
 		if is_instance_valid(target):
 			
+			print(target)
 			has_target = true
 			
 	if has_target and is_instance_valid(target):

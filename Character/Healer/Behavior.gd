@@ -5,7 +5,7 @@ onready var base_heal = get_node("Abilities/BasicHeal")
 var base_range = 10
 var movement = get_parent().find_node("Movement")
 var at_target = false
-var has_target = false
+var has_target = false 
 var target 
 
 func _process(delta):
@@ -27,7 +27,7 @@ func _process(delta):
 				
 				if base_heal.is_in_range(target):
 					return
-				#there is noone to heal, just move towards a target
+				#there is no one to heal, just move towards a target
 				movement.go_to_target(target)
 				return
 				
@@ -35,7 +35,7 @@ func _process(delta):
 				
 				has_target = true
 	
-	elif has_target and is_instance_valid(target):
+	if has_target and is_instance_valid(target):
 		
 		if base_heal.can_heal(target):
 			
@@ -45,10 +45,6 @@ func _process(delta):
 		elif not base_heal.is_in_range(target):
 			
 			movement.go_to_target(target)
-			
-	elif not is_instance_valid(target):
-		
-		has_target = false
 				
 func calculate_priority_score(target, health_score, dist_score):
 	
@@ -61,17 +57,22 @@ func calculate_priority_score(target, health_score, dist_score):
 func comp_health(var ally1, var ally2):
 	
 	var eps = 1e-2
-	var health_score = 0.5
-	var dist_score = 0.5
+	var health_score = 0.7
+	var dist_score = 0.3
 	var dist1 = owner.translation.distance_to(ally1.translation) + eps
 	var heal1 = ally1.max_health - ally1.health
 	
 	var dist2 = owner.translation.distance_to(ally2.translation) + eps
 	var heal2 = ally2.max_health - ally2.health
 	
+	
 	if heal1 == 0 and heal2 == 0:
 		
-		return dist1 > dist2
+		return dist1 < dist2
+		
+	if heal1 == 0 or heal2 == 0:
+		
+		return heal1 > heal2	
 		
 	dist1 = dist1 / max(dist1, dist2)
 	heal1 = heal1 / max(heal1, heal2)

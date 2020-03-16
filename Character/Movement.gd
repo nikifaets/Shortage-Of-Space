@@ -3,11 +3,15 @@ extends Node
 var up = Vector3(0,1,0)
 onready var states = {"Maneuever" : $Maneuever, "Chase" : $Chase}
 onready var curr_state = states["Chase"]
-var target
-
+var target #setget set_target
+var min_dist = 15
 func _physics_process(delta):
 	
+
 	if not is_instance_valid(target):
+		return
+		
+	if owner.translation.distance_to(target.translation) < min_dist:
 		return
 		
 	curr_state.move(delta)
@@ -33,5 +37,8 @@ func maneuever(target):
 	change_state("Maneuever")
 	
 
+func set_target(target):
 	
+	$Maneuever.target = target
+
 	
