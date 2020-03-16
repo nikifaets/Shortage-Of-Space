@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Interface/Resources/baloochettan.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Interface/Scenes/FleetScreen.gd" type="Script" id=2]
@@ -9,6 +9,24 @@
 [ext_resource path="res://Interface/Scenes/showcase.gd" type="Script" id=7]
 [ext_resource path="res://Interface/Resources/baloochettan_header.tres" type="DynamicFont" id=8]
 [ext_resource path="res://Interface/Components/MenuButtons/BackButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Interface/Resources/Environment/Crab Nebula/hdr.png" type="Texture" id=10]
+[ext_resource path="res://Interface/Resources/Environment/Planet Atmosphere/hdr_main_menu_background.png" type="Texture" id=11]
+[ext_resource path="res://Interface/Resources/Fonts/BalooChettan/BalooChettan2-Medium.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 10 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_size = 1
+outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 12 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -17,6 +35,14 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="hdr_main_menu_background" type="Sprite" parent="."]
+position = Vector2( 753.326, 263.203 )
+scale = Vector2( 0.327158, 0.327158 )
+texture = ExtResource( 11 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
 
 [node name="Core" type="HBoxContainer" parent="."]
 anchor_right = 1.0
@@ -30,7 +56,7 @@ __meta__ = {
 
 [node name="LeftSegment" type="VBoxContainer" parent="Core"]
 margin_right = 830.0
-margin_bottom = 732.0
+margin_bottom = 744.0
 custom_constants/separation = 25
 
 [node name="ViewportContainer" type="ViewportContainer" parent="Core/LeftSegment"]
@@ -43,6 +69,16 @@ stretch = true
 size = Vector2( 830, 415 )
 handle_input_locally = false
 render_target_update_mode = 3
+
+[node name="OmniLight" type="OmniLight" parent="Core/LeftSegment/ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.60196, 0.858888 )
+light_energy = 1.8
+light_indirect_energy = 4.22
+light_specular = 0.41
+shadow_enabled = true
+shadow_color = Color( 0.584314, 0.584314, 0.584314, 1 )
+omni_range = 66.3
+omni_attenuation = 0.329877
 
 [node name="Camera" type="Camera" parent="Core/LeftSegment/ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 4, 6.5 )
@@ -63,9 +99,9 @@ margin_bottom = 270.0
 
 [node name="Label" type="Label" parent="Core/LeftSegment/DetailsContainer/Abilities"]
 margin_right = 220.0
-margin_bottom = 29.0
+margin_bottom = 44.0
 rect_min_size = Vector2( 220, 0 )
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Abilities"
 align = 1
 valign = 1
@@ -74,18 +110,18 @@ __meta__ = {
 }
 
 [node name="AbilityContainer" type="VBoxContainer" parent="Core/LeftSegment/DetailsContainer/Abilities"]
-margin_top = 33.0
+margin_top = 52.0
 margin_right = 220.0
-margin_bottom = 33.0
+margin_bottom = 52.0
 
 [node name="VSeparator" type="VSeparator" parent="Core/LeftSegment/DetailsContainer"]
 margin_left = 234.0
-margin_right = 238.0
+margin_right = 242.0
 margin_bottom = 270.0
 
 [node name="Details" type="VBoxContainer" parent="Core/LeftSegment/DetailsContainer"]
-margin_left = 252.0
-margin_right = 792.0
+margin_left = 256.0
+margin_right = 796.0
 margin_bottom = 270.0
 rect_min_size = Vector2( 540, 0 )
 
@@ -96,7 +132,7 @@ custom_fonts/font = ExtResource( 8 )
 text = "Header"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Core/LeftSegment/DetailsContainer/Details"]
-margin_top = 70.0
+margin_top = 74.0
 margin_right = 540.0
 margin_bottom = 270.0
 rect_min_size = Vector2( 300, 0 )
@@ -107,14 +143,15 @@ text = "Giotto is a Healer Spaceship designed by the Italians before The War sta
 "
 
 [node name="VSeparator2" type="VSeparator" parent="Core"]
+visible = false
 margin_left = 854.0
-margin_right = 858.0
-margin_bottom = 732.0
+margin_right = 862.0
+margin_bottom = 744.0
 
 [node name="ShipList" type="VBoxContainer" parent="Core"]
-margin_left = 882.0
-margin_right = 1282.0
-margin_bottom = 732.0
+margin_left = 854.0
+margin_right = 1254.0
+margin_bottom = 744.0
 rect_min_size = Vector2( 400, 720 )
 
 [node name="ShipItem" parent="Core/ShipList" instance=ExtResource( 5 )]
@@ -122,30 +159,30 @@ ship_id = "0"
 ship_scene_path = "res://Models/Giotto/Giotto.tscn"
 ship_type = "Giotto"
 lore = "Giotto is a Healer Spaceship designed by the Italians before The War started. The Italian engineers really did an outstanding job with this one. It utilizes second generation Gluon Weld Laser  “GW ” which is able to stich space craft holes bigger than a dinglebop from a distance of two moon years. Giotto has one more trick up its sleeve they don’t call these spaceships HP Wasps for nothing. That small healer packs a very powerful IP404 Thruster Engine which is capable of 5 tons fire spiting thrust at a flick of a switch."
-abilities = [ "Nani", "Nani2", "Nani3" ]
+abilities = [ "Healer", "GW-laser: Heal (single)", "GW-boom: Heal (multiple)" ]
 
 [node name="ShipItem2" parent="Core/ShipList" instance=ExtResource( 6 )]
-margin_top = 184.0
-margin_bottom = 364.0
+margin_top = 188.0
+margin_bottom = 368.0
 ship_scene_path = "res://Models/Leshy/Leshy.tscn"
 ship_type = "Leshy"
 lore = "Leshy , everybody has heard of that name. “Fast, robust, always ready” that’s the motto of every Leshy crew. Those guys have been to every place in the Galaxy from planet Earth to the far lands of Azeroth. There is a rumor that a small squad of 8 once managed to withstand 43 hours of artillery barrage I can imagine only imagine the skill of the General that day, a true hero!"
-abilities = [ "Can Drink?", "Can sleep?" ]
+abilities = [ "Fighter", "Lux8000 : Small laser" ]
 
 [node name="ShipItem3" parent="Core/ShipList" instance=ExtResource( 4 )]
-margin_top = 368.0
-margin_bottom = 548.0
+margin_top = 376.0
+margin_bottom = 556.0
 ship_scene_path = "res://Models/Shanshen/Shanshen.tscn"
 ship_type = "Shanshen"
 lore = "Tough times call for tough armor. Speaking of hard steel Shanshen is one of a kind Tank Spaceship. Your enemies have heard of it, heck if you haven’t heard of them, they might have even seen one. China really knows the good craft of metallurgy and the punch of that beast of a spaceship. Chinese engineers have installed massive artillery battery accompanied with the latest sights. Manned by one of the best squads in the whole army this unit is sure to make an impact on the battlefield. "
-abilities = [ "Maybe, just maybe die", "is gay", "nice", "profit" ]
+abilities = [ "Tank", "Apollo-Houston : Rockets", "Magare System : Taunt (single)", "T-blast: Taunt (massive)" ]
 
 [node name="ShipItem4" parent="Core/ShipList" instance=ExtResource( 3 )]
-margin_top = 552.0
-margin_bottom = 732.0
+margin_top = 564.0
+margin_bottom = 744.0
 ship_scene_path = "res://Models/Wendigo/Wendigo.tscn"
 ship_type = "Windigo"
 lore = "Maybe things didn’t turn out exactly the way you intended. Big-headed, quick-tempered, the boys won’t like it but you know it’s the right, the only right choice – Wendigo. Don’t mind the sluggishness this Fighter Spaceship is the definition of hard punch. Its powerful blasters can punch a hole through everything just be gentle when giving orders, friendly fire is on."
-abilities = [ "The ability to suck dicks", "Maybe that is cool", "nicenicenicenice" ]
+abilities = [ "Fighter", "Lumin-MK5 : Big laser" ]
 
 [node name="BackButton" parent="." instance=ExtResource( 9 )]

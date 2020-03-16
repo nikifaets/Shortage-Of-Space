@@ -8,3 +8,5 @@
 margin_left = -83.5
 margin_right = 83.5
 text = "FLEET"
+align = 1
+valign = 1
