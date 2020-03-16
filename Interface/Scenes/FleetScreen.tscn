@@ -45,7 +45,7 @@ handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="Camera" type="Camera" parent="Core/LeftSegment/ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 3.5, 5 )
+transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 4, 6.5 )
 
 [node name="Ships" type="Spatial" parent="Core/LeftSegment/ViewportContainer/Viewport"]
 script = ExtResource( 7 )
