@@ -8,6 +8,10 @@ var at_target = false
 var has_target = false 
 var target 
 
+func _ready():
+	
+	var radius = base_heal.find_node("CollisionShape").shape.radius
+	movement.set_radius(radius)
 func _process(delta):
 	
 	#choose action - base heal or mass heal
@@ -110,6 +114,9 @@ func choose_target():
 			return owner.allies[1]
 			
 	# if tank not found and target is not self
-
+	
+	if owner.allies.size() == 1:
+		return 
+		
 	return first_wounded
 	

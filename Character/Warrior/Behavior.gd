@@ -4,8 +4,14 @@ var target
 var has_target
 var target_reached = false
 var movement = get_parent().find_node("Movement")
-onready var basic_damage = get_node("Abilities/BasicDamage")
+onready var basic_damage = $Abilities/BasicDamage
+onready var range_radius = basic_damage.find_node("CollisionShape", true).shape.radius
 
+func _ready():
+	
+	var radius = basic_damage.find_node("CollisionShape").shape.radius
+	movement.set_radius(radius)
+	
 func _process(delta):
 	
 	owner.find_node("Movement").target = target

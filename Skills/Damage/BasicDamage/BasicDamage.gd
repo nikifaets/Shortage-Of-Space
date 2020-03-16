@@ -1,6 +1,6 @@
 extends Spatial
 
-var Missile = preload("res://Skills/Missiles/BasicLaser/BasicLaser.tscn")
+onready var Missile = find_node("Missile").missile
 
 var caster
 var cd_ready = true
@@ -33,7 +33,8 @@ func shoot(target):
 		can_shoot = true
 		var missile = Missile.instance()
 		get_tree().get_root().add_child(missile)
-		missile.translation = caster.translation
+		missile.translation = to_global(translation)
+		missile.look_at(target.translation, Vector3(0,1,0))
 	
 		missile.shoot(self, target)
 		$Cooldown.start()

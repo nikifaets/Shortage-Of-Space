@@ -20,3 +20,9 @@ func _on_Buffer_body_exited(character):
 func is_in_range(character):
 	
 	return targets.has(character)
+
+func remove_dead():
+	
+	for target in targets:
+		if not is_instance_valid(target):
+			targets.erase(target)

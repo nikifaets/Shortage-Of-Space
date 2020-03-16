@@ -1,15 +1,30 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Character/Warrior/Warrior.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Models/Wendigo/Wendigo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Character/Warrior/Wendigo/Meta.gd" type="Script" id=3]
+[ext_resource path="res://Skills/Damage/MediumDamage/MediumDamage.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="SphereShape" id=2]
+radius = 78.1735
 
 [node name="Wendigo" instance=ExtResource( 1 )]
-speed = 7
+speed = 11
 max_health = 200
 health = 200
 
-[node name="BasicDamage" parent="Behavior/Abilities" index="0"]
-dmg = 20
+[node name="CollisionShape" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="BasicDamage" parent="Behavior/Abilities" index="0" instance=ExtResource( 4 )]
+
+[node name="CollisionShape" parent="Behavior/Abilities/BasicDamage/Buffer" index="0"]
+shape = SubResource( 2 )
+
+[node name="Meta" parent="." index="3"]
+script = ExtResource( 3 )
 
 [node name="Wendigo" parent="." index="4" instance=ExtResource( 2 )]
 

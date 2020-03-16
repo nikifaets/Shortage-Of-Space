@@ -1,23 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Models/Missiles/BasicLaser/smalllaser.jpg" type="Texture" id=1]
 [ext_resource path="res://Skills/Missiles/BaseMissile/BaseMissile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Models/Missiles/BasicLaser/SmallLasers.obj" type="ArrayMesh" id=3]
-
-[sub_resource type="SpatialMaterial" id=1]
-albedo_texture = ExtResource( 1 )
-emission_enabled = true
-emission = Color( 0.968627, 0.890196, 0.054902, 1 )
-emission_energy = 1.0
-emission_operator = 0
-emission_on_uv2 = false
+[ext_resource path="res://Models/Missiles/LaserMissile.tscn" type="PackedScene" id=3]
 
 [node name="BasicLaser" instance=ExtResource( 2 )]
-speed = 20
+speed = 80
 
-[node name="Missile" type="Spatial" parent="." index="0"]
+[node name="Missile" parent="." index="0" instance=ExtResource( 3 )]
 
-[node name="BasicLaser" type="MeshInstance" parent="Missile" index="0"]
-transform = Transform( 2.88805, 0, 0, 0, -4.70524e-07, -2.88805, 0, 2.88805, -4.70524e-07, 0, 0, 0.228243 )
-mesh = ExtResource( 3 )
-material/0 = SubResource( 1 )
+[node name="BasicLaser" parent="Missile" index="0"]
+transform = Transform( 3.9642, 0, 0, 0, -6.45851e-07, -3.9642, 0, 5.14069, -8.37526e-07, 0, 0, 2.57942 )
+
+[editable path="Missile"]

@@ -40,17 +40,20 @@ custom_constants/separation = 11
 
 [node name="PlayButton" parent="Menu/Controls" instance=ExtResource( 3 )]
 margin_top = 0.0
-margin_bottom = 100.0
+margin_right = 1040.0
+margin_bottom = 20.0
 scene_to_load = "res://Levels/FirstLevel/FirstLevel.tscn"
 
 [node name="FleetButton" parent="Menu/Controls" instance=ExtResource( 4 )]
-margin_top = 111.0
-margin_bottom = 211.0
+margin_top = 31.0
+margin_right = 1040.0
+margin_bottom = 51.0
 scene_to_load = "res://Interface/Scenes/FleetScreen.tscn"
 
 [node name="QuitButton" parent="Menu/Controls" instance=ExtResource( 1 )]
-margin_top = 222.0
-margin_bottom = 322.0
+margin_top = 62.0
+margin_right = 1040.0
+margin_bottom = 82.0
 
 [node name="FadeIn" parent="." instance=ExtResource( 5 )]
 visible = false
