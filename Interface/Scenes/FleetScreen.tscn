@@ -34,17 +34,16 @@ margin_right = 830.0
 margin_bottom = 415.0
 rect_min_size = Vector2( 830, 415 )
 stretch = true
-stretch_shrink = 4
 
 [node name="Viewport" type="Viewport" parent="Core/LeftSegment/ViewportContainer"]
-size = Vector2( 207, 103 )
+size = Vector2( 830, 415 )
 handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="Camera" type="Camera" parent="Core/LeftSegment/ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3.5 )
+transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 3.5, 5 )
 
-[node name="Node" type="Node" parent="Core/LeftSegment/ViewportContainer/Viewport"]
+[node name="Ships" type="Node" parent="Core/LeftSegment/ViewportContainer/Viewport"]
 
 [node name="DetailsContainer" type="HBoxContainer" parent="Core/LeftSegment"]
 margin_top = 440.0
@@ -117,6 +116,7 @@ abilities = [ "Nani", "Nani2", "Nani3" ]
 [node name="ShipItem2" parent="Core/ShipList" instance=ExtResource( 6 )]
 margin_top = 184.0
 margin_bottom = 364.0
+ship_scene_path = "res://Models/Fighter/starfighter1.tscn"
 ship_type = "Ship2"
 lore = "qweqweqwewqe"
 abilities = [ "Can Drink?", "Can sleep?" ]
@@ -124,6 +124,7 @@ abilities = [ "Can Drink?", "Can sleep?" ]
 [node name="ShipItem3" parent="Core/ShipList" instance=ExtResource( 4 )]
 margin_top = 368.0
 margin_bottom = 548.0
+ship_scene_path = "res://Models/Healer/healer.tscn"
 ship_type = "Ship3"
 lore = "asdasdsadsadsadasd"
 abilities = [ "Maybe, just maybe die", "is gay", "nice", "profit" ]
@@ -131,7 +132,7 @@ abilities = [ "Maybe, just maybe die", "is gay", "nice", "profit" ]
 [node name="ShipItem4" parent="Core/ShipList" instance=ExtResource( 3 )]
 margin_top = 552.0
 margin_bottom = 732.0
-ship_scene_path = "res://Models/Healer/healer.tscn"
+ship_scene_path = "res://Models/Fighter/starfighter1.tscn"
 ship_type = "Ship4"
 lore = "asdaasdqweqdasdqweqdasd"
 abilities = [ "The ability to suck dicks", "Maybe that is cool", "nicenicenicenice" ]

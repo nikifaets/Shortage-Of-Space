@@ -38,18 +38,20 @@ func _change_ship_details(id, path, type, lore, abilities):
 		# item.find_node("Icon").set()
 		$Core/LeftSegment/DetailsContainer/Abilities/AbilityContainer.add_child(item)
 		
-	#load_mesh(path)
+	load_mesh(path)
 	
 func load_mesh(path):
 	print("Loading mesh from " + path)
 	var ShipMesh = load(path)
-	var viewport = $Core/LeftSegment/ViewportContainer/Viewport
+	var viewport = $Core/LeftSegment/ViewportContainer/Viewport/Ships
 	
-	# viewport.find_node("")
+	for i in viewport.get_children():
+		i.queue_free()
 	# find the previous mesh node if it exists and remove it.
 	
 	var ship = ShipMesh.instance()
 	
+	#ship.scale = Vector3()
 	ship.translation = Vector3(0, 2, 0)
 	#ship.start_animation()
 	viewport.add_child(ship)
