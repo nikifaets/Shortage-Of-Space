@@ -7,6 +7,6 @@
 albedo_texture = ExtResource( 2 )
 
 [node name="Wendigo" type="MeshInstance"]
-transform = Transform( 4.3, 0, 0, 0, -1.87959e-07, 4.3, 0, -4.3, -1.87959e-07, 0, 5, 0 )
+transform = Transform( -4.3, 1.40112e-06, 2.28271e-13, 0, -7.00559e-07, 4.3, 1.40112e-06, 4.3, 7.00559e-07, -1, 0, 0 )
 mesh = ExtResource( 1 )
 material/0 = SubResource( 1 )

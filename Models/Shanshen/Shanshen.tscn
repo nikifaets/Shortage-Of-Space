@@ -7,6 +7,6 @@
 albedo_texture = ExtResource( 1 )
 
 [node name="Shanshen" type="MeshInstance"]
-transform = Transform( 4, 0, 0, 0, -1.74846e-07, 4, 0, -4, -1.74846e-07, 0, 5, 0 )
+transform = Transform( 4, 0, 0, 0, -1.74846e-07, 4, 0, -4, -1.74846e-07, 0, 0, 2.5 )
 mesh = ExtResource( 2 )
 material/0 = SubResource( 1 )

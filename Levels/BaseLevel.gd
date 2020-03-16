@@ -1,9 +1,10 @@
 extends Spatial
 
-var Healer = preload("res://Character/Healer/Healer.tscn")
-var Warrior = preload("res://Character/Warrior/Warrior.tscn")
+var Giotto = preload("res://Character/Healer/Giotto/Giotto.tscn")
+var Leshy = preload("res://Character/Warrior/Leshy/Leshy.tscn")
+var Wendigo = preload("res://Character/Warrior/Wendigo/Wendigo.tscn")
 
-var labels = {"Healer" : Healer, "Warrior" : Warrior}
+var labels = {"Leshy" : Leshy, "Giotto" : Giotto, "Wendigo" : Wendigo}
 
 onready var camera = get_node("Camera")
 

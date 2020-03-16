@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Character/Warrior/Warrior.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Models/Wendigo/Wendigo.tscn" type="PackedScene" id=2]
+
+[node name="Wendigo" instance=ExtResource( 1 )]
+speed = 7
+max_health = 200
+health = 200
+
+[node name="BasicDamage" parent="Behavior/Abilities" index="0"]
+dmg = 20
+
+[node name="Wendigo" parent="." index="4" instance=ExtResource( 2 )]
+
+[editable path="Behavior/Abilities/BasicDamage"]
+
+[editable path="Behavior/Abilities/BasicDamage/Buffer"]
