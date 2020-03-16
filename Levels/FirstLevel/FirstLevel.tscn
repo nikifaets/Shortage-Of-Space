@@ -7,16 +7,8 @@
 [node name="FirstLevel" instance=ExtResource( 1 )]
 
 [node name="Warrior" parent="Enemies" index="0" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.15156, 0 )
 
-[node name="Warrior4" parent="Enemies" index="1" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.791, 8.15156, 0 )
-
-[node name="Warrior2" parent="Enemies" index="2" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4867, 9.00956, 0 )
-
-[node name="Warrior3" parent="Enemies" index="3" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8397, 8.15156, -23.7347 )
+[node name="Warrior2" parent="Enemies" index="1" instance=ExtResource( 3 )]
 
 [node name="Camera" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 0.472827, 0.881155, 0, -0.881155, 0.472827, 0, 62.2037, 0 )
@@ -36,8 +28,4 @@ transform = Transform( 3, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 28.9
 
 [editable path="Enemies/Warrior/Behavior/Abilities/BasicDamage/Buffer"]
 
-[editable path="Enemies/Warrior4"]
-
 [editable path="Enemies/Warrior2"]
-
-[editable path="Enemies/Warrior3"]

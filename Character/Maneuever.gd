@@ -31,7 +31,6 @@ func move(delta):
 		
 		calculate_destination()
 		
-
 func calculate_destination():
 	
 	var rng = RandomNumberGenerator.new()

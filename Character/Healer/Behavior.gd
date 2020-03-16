@@ -25,6 +25,8 @@ func _process(delta):
 			
 			if potential_heal == 0:
 				
+				if base_heal.is_in_range(target):
+					return
 				#there is noone to heal, just move towards a target
 				movement.go_to_target(target)
 				return
@@ -40,7 +42,7 @@ func _process(delta):
 			base_heal.cast(target)
 			has_target = false
 			
-		else:
+		elif not base_heal.is_in_range(target):
 			
 			movement.go_to_target(target)
 			
@@ -59,8 +61,8 @@ func calculate_priority_score(target, health_score, dist_score):
 func comp_health(var ally1, var ally2):
 	
 	var eps = 1e-2
-	var health_score = 0.7
-	var dist_score = 0.3
+	var health_score = 0.5
+	var dist_score = 0.5
 	var dist1 = owner.translation.distance_to(ally1.translation) + eps
 	var heal1 = ally1.max_health - ally1.health
 	
