@@ -41,7 +41,7 @@ func load_health_bar(unit):
 	
 func update_bars():
 	
-	var margin = 40
+	var margin = 60
 	#clean dictionary
 	for unit in units.keys():
 		if not is_instance_valid(unit):

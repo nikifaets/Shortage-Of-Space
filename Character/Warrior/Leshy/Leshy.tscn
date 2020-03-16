@@ -1,20 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Character/Warrior/Warrior.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Models/Leshy/Leshy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Skills/Damage/BasicDamage/BasicDamage.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Skills/Damage/WeakDamage/BasicDamage.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Character/Warrior/Leshy/Meta.gd" type="Script" id=4]
-
-[sub_resource type="SphereShape" id=1]
-radius = 33.8837
 
 [node name="Leshy" instance=ExtResource( 1 )]
 speed = 15
+max_health = 150
+health = 150
 
 [node name="BasicDamage" parent="Behavior/Abilities" index="0" instance=ExtResource( 3 )]
-
-[node name="CollisionShape" parent="Behavior/Abilities/BasicDamage/Buffer" index="0"]
-shape = SubResource( 1 )
 
 [node name="Meta" parent="." index="3"]
 script = ExtResource( 4 )

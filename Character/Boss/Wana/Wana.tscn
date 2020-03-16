@@ -14,13 +14,15 @@ health = 1000
 script = ExtResource( 4 )
 
 [node name="BasicDamage" parent="Behavior/Abilities" index="0" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.87199, 0.381828, -4.0386 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.66125, 0.381828, -0.28804 )
+dmg = 20
 
 [node name="Cooldown" parent="Behavior/Abilities/BasicDamage" index="0"]
 wait_time = 2.0
 
 [node name="BasicDamage2" parent="Behavior/Abilities" index="1" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.50999, 0.381828, -3.94078 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47465, 0.381828, -0.723551 )
+dmg = 20
 
 [node name="Cooldown" parent="Behavior/Abilities/BasicDamage2" index="0"]
 wait_time = 2.0

@@ -46,7 +46,4 @@ shadow_color = Color( 0.603922, 0.603922, 0.603922, 1 )
 omni_range = 304.3
 omni_attenuation = 1.36604
 
-[node name="SpotLight" type="SpotLight" parent="." index="9"]
-transform = Transform( 0.126926, 0.991912, 0, 0.0796539, -0.0101926, 0.996771, 0.988709, -0.126516, -0.0803033, -2.80647, 47.4203, 0 )
-visible = false
-spot_range = 20.4
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="9"]

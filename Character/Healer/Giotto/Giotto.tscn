@@ -5,6 +5,8 @@
 
 [node name="Giotto" instance=ExtResource( 1 )]
 speed = 18
+max_health = 150
+health = 150
 
 [node name="Giotto" parent="." index="4" instance=ExtResource( 2 )]
 
