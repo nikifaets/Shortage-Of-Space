@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Models/HalNine/SecondBos.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Models/HalNine/SecondBos.jpg" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.976471, 0.968627, 0.968627, 1 )
+albedo_texture = ExtResource( 2 )
+metallic = 0.34
+
+[node name="HalNine" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, -1.5, 5, 0 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )

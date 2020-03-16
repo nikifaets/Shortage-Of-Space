@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bossanakokosatam1.obj-fda3bd009f6c18b7551dc5ca129913cd.mesh"
+
+[deps]
+
+files=[ "res://.import/bossanakokosatam1.obj-fda3bd009f6c18b7551dc5ca129913cd.mesh" ]
+
+source_file="res://Models/Wana/bossanakokosatam1.obj"
+dest_files=[ "res://.import/bossanakokosatam1.obj-fda3bd009f6c18b7551dc5ca129913cd.mesh", "res://.import/bossanakokosatam1.obj-fda3bd009f6c18b7551dc5ca129913cd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

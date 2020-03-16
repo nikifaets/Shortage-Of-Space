@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Fighter2.obj-d00a5494d8b252a3ce9c58fa6c865d57.mesh"
+
+[deps]
+
+files=[ "res://.import/Fighter2.obj-d00a5494d8b252a3ce9c58fa6c865d57.mesh" ]
+
+source_file="res://Models/Wendigo/Fighter2.obj"
+dest_files=[ "res://.import/Fighter2.obj-d00a5494d8b252a3ce9c58fa6c865d57.mesh", "res://.import/Fighter2.obj-d00a5494d8b252a3ce9c58fa6c865d57.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

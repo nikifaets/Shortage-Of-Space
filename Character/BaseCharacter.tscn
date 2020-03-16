@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Character/BaseCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Character/Movement.gd" type="Script" id=2]
@@ -6,11 +6,6 @@
 [ext_resource path="res://Character/Chase.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
-
-[sub_resource type="CapsuleMesh" id=2]
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.0313726, 0.290196, 0.901961, 1 )
 
 [node name="BaseCharacter" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
@@ -28,10 +23,6 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
 
 [node name="Behavior" type="Spatial" parent="."]
 

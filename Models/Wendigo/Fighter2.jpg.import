@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/BosanaKokosa1.jpg-29d7be02168a089dd4f0fe267c8968a7.s3tc.stex"
-path.etc2="res://.import/BosanaKokosa1.jpg-29d7be02168a089dd4f0fe267c8968a7.etc2.stex"
+path.s3tc="res://.import/Fighter2.jpg-b919a443fc47d1978bd7634994294061.s3tc.stex"
+path.etc2="res://.import/Fighter2.jpg-b919a443fc47d1978bd7634994294061.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/BosaNaKokosa/BosanaKokosa1.jpg"
-dest_files=[ "res://.import/BosanaKokosa1.jpg-29d7be02168a089dd4f0fe267c8968a7.s3tc.stex", "res://.import/BosanaKokosa1.jpg-29d7be02168a089dd4f0fe267c8968a7.etc2.stex" ]
+source_file="res://Models/Wendigo/Fighter2.jpg"
+dest_files=[ "res://.import/Fighter2.jpg-b919a443fc47d1978bd7634994294061.s3tc.stex", "res://.import/Fighter2.jpg-b919a443fc47d1978bd7634994294061.etc2.stex" ]
 
 [params]
 

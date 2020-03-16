@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Leshy.obj-763c8d62c0ca3476e878c90ecaa9b12f.mesh"
+
+[deps]
+
+files=[ "res://.import/Leshy.obj-763c8d62c0ca3476e878c90ecaa9b12f.mesh" ]
+
+source_file="res://Models/Leshy/Leshy.obj"
+dest_files=[ "res://.import/Leshy.obj-763c8d62c0ca3476e878c90ecaa9b12f.mesh", "res://.import/Leshy.obj-763c8d62c0ca3476e878c90ecaa9b12f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

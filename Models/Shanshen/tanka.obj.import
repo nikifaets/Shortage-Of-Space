@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tanka.obj-7722c9e7f1d1f063ccd0d33a2df34070.mesh"
+
+[deps]
+
+files=[ "res://.import/tanka.obj-7722c9e7f1d1f063ccd0d33a2df34070.mesh" ]
+
+source_file="res://Models/Shanshen/tanka.obj"
+dest_files=[ "res://.import/tanka.obj-7722c9e7f1d1f063ccd0d33a2df34070.mesh", "res://.import/tanka.obj-7722c9e7f1d1f063ccd0d33a2df34070.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

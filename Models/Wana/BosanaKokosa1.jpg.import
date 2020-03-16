@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/startfighter1.jpg-5fce4c38b35e7611502203f847d886ae.s3tc.stex"
-path.etc2="res://.import/startfighter1.jpg-5fce4c38b35e7611502203f847d886ae.etc2.stex"
+path.s3tc="res://.import/BosanaKokosa1.jpg-9c8d2358a265c4ce81ec073e6dac062f.s3tc.stex"
+path.etc2="res://.import/BosanaKokosa1.jpg-9c8d2358a265c4ce81ec073e6dac062f.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Fighter/startfighter1.jpg"
-dest_files=[ "res://.import/startfighter1.jpg-5fce4c38b35e7611502203f847d886ae.s3tc.stex", "res://.import/startfighter1.jpg-5fce4c38b35e7611502203f847d886ae.etc2.stex" ]
+source_file="res://Models/Wana/BosanaKokosa1.jpg"
+dest_files=[ "res://.import/BosanaKokosa1.jpg-9c8d2358a265c4ce81ec073e6dac062f.s3tc.stex", "res://.import/BosanaKokosa1.jpg-9c8d2358a265c4ce81ec073e6dac062f.etc2.stex" ]
 
 [params]
 

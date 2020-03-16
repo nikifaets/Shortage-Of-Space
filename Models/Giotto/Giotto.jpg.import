@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/healer.jpg-62072bd30f26f9760c4f919458df1fa6.s3tc.stex"
-path.etc2="res://.import/healer.jpg-62072bd30f26f9760c4f919458df1fa6.etc2.stex"
+path.s3tc="res://.import/Giotto.jpg-a70a51684af7f5ab4f5a091a8742358d.s3tc.stex"
+path.etc2="res://.import/Giotto.jpg-a70a51684af7f5ab4f5a091a8742358d.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Healer/healer.jpg"
-dest_files=[ "res://.import/healer.jpg-62072bd30f26f9760c4f919458df1fa6.s3tc.stex", "res://.import/healer.jpg-62072bd30f26f9760c4f919458df1fa6.etc2.stex" ]
+source_file="res://Models/Giotto/Giotto.jpg"
+dest_files=[ "res://.import/Giotto.jpg-a70a51684af7f5ab4f5a091a8742358d.s3tc.stex", "res://.import/Giotto.jpg-a70a51684af7f5ab4f5a091a8742358d.etc2.stex" ]
 
 [params]
 
