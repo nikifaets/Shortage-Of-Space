@@ -9,7 +9,7 @@ albedo_texture = ExtResource( 2 )
 metallic = 0.73
 roughness = 0.26
 
-[node name="starfighter1" type="MeshInstance"]
+[node name="Leshy" type="MeshInstance"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 mesh = ExtResource( 1 )
 material/0 = SubResource( 1 )

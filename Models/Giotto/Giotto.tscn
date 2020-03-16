@@ -6,9 +6,7 @@
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
 
-[node name="Spatial" type="Spatial"]
-
-[node name="healercheto" type="MeshInstance" parent="."]
+[node name="Giotto" type="MeshInstance"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
 mesh = ExtResource( 1 )
 material/0 = SubResource( 1 )
