@@ -46,6 +46,9 @@ func _process(delta):
 			
 			movement.go_to_target(target)
 				
+	if not is_instance_valid(target):
+		
+		has_target = false
 func calculate_priority_score(target, health_score, dist_score):
 	
 	var dist = owner.translation.distance_to(target.translation)

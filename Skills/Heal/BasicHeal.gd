@@ -5,7 +5,6 @@ var caster
 var cd_ready = true
 
 export var area = 10
-
 	
 func can_heal(target):
 	

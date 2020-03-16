@@ -47,7 +47,7 @@ func summon(type):
 	allies.push_back(new_ship)
 	new_ship.set_team(0)
 	new_ship.refresh_enemies(enemies)
-	new_ship.translation = $"3DCursor".get_cursor_coords() + Vector3(0, ground_margin, 0)
+	new_ship.translation = $"3DCursor".get_cursor_coords()
 	add_child(new_ship)
 	new_ship.connect("die", self, "on_unit_died", [new_ship])
 	

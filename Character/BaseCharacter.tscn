@@ -13,6 +13,7 @@
 albedo_color = Color( 0.0313726, 0.290196, 0.901961, 1 )
 
 [node name="BaseCharacter" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
 collision_layer = 0
 script = ExtResource( 1 )
 

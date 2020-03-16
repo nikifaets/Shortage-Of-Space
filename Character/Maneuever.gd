@@ -15,6 +15,8 @@ func enter_state():
 	
 func move(delta):
 	
+	target = get_parent().target
+
 	if not is_instance_valid(target):
 		return
 		
@@ -33,13 +35,16 @@ func move(delta):
 		
 func calculate_destination():
 	
+	
 	var rng = RandomNumberGenerator.new()
+	rng.randomize()
 	var offset_x = rng.randf_range(-radius, radius)
 	var offset_z = rng.randf_range(-radius, radius)
 	
 	var offset = Vector3(offset_x, 0, offset_z)
 	
 	destination = target.translation + offset
+	print("offset ", offset)
 	target_reached = false
 	
 	

@@ -4,7 +4,7 @@ var up = Vector3(0,1,0)
 onready var states = {"Maneuever" : $Maneuever, "Chase" : $Chase}
 onready var curr_state = states["Chase"]
 var target #setget set_target
-var min_dist = 15
+var min_dist = 10
 func _physics_process(delta):
 	
 

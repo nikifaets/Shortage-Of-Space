@@ -13,7 +13,7 @@ func _ready():
 	call_deferred("load_buttons")
 
 func _process(delta):
-	
+	pass
 	update_bars()
 	
 func is_unused():

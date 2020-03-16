@@ -9,7 +9,7 @@ func _process(delta):
 func handle_input():
 	
 	if Input.is_action_pressed("move_up"):
-		
+
 		translation += Vector3(0, 0, -speed)
 	
 	if Input.is_action_pressed("move_down"):

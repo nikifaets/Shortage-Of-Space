@@ -3,7 +3,7 @@
 [ext_resource path="res://Skills/RangeBuffer.gd" type="Script" id=1]
 
 [sub_resource type="SphereShape" id=1]
-radius = 30.8762
+radius = 109.915
 
 [node name="Buffer" type="Area"]
 script = ExtResource( 1 )
