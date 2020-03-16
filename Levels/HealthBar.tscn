@@ -19,8 +19,8 @@ anti_aliasing = false
 [node name="HealthBar" type="ProgressBar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -1000.0
-margin_bottom = -597.0
+margin_right = -1256.0
+margin_bottom = -717.0
 rect_min_size = Vector2( 24, 3 )
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.0
