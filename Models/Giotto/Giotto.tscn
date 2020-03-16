@@ -7,6 +7,6 @@
 albedo_texture = ExtResource( 2 )
 
 [node name="Giotto" type="MeshInstance"]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
+transform = Transform( 1.1, 0, 0, 0, -4.80825e-08, 1.1, 0, -1.1, -4.80825e-08, 0, 5, 0 )
 mesh = ExtResource( 1 )
 material/0 = SubResource( 1 )
