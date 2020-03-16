@@ -9,6 +9,6 @@ albedo_texture = ExtResource( 2 )
 metallic = 0.34
 
 [node name="HalNine" type="MeshInstance"]
-transform = Transform( 2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -1.5, 5, 0 )
+transform = Transform( 2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -3.5, 0, -1.5 )
 mesh = ExtResource( 1 )
 material/0 = SubResource( 1 )
