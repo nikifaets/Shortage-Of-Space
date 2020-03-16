@@ -1,0 +1,142 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Interface/Scripts/return_to_main_menu.gd" type="Script" id=1]
+[ext_resource path="res://Interface/Resources/baloochettan.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Interface/Resources/baloochettan_description.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Interface/Components/ShipItemButtons/ShipItemInherited3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Interface/Components/ShipItemButtons/ShipItemInherited4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Interface/Components/ShipItemButtons/ShipItemInherited1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Interface/Components/AbilityItems/AbilityItemInstance1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Interface/Components/ShipItemButtons/ShipItemInherited2.tscn" type="PackedScene" id=8]
+
+[sub_resource type="LargeTexture" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainHorizontal" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1280, 720 )
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftVertical" type="VBoxContainer" parent="MainHorizontal"]
+margin_right = 800.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 0, 700 )
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="MainHorizontal/LeftVertical"]
+margin_right = 800.0
+margin_bottom = 340.0
+
+[node name="Viewport" type="TextureRect" parent="MainHorizontal/LeftVertical/CenterContainer"]
+margin_right = 800.0
+margin_bottom = 340.0
+rect_min_size = Vector2( 800, 340 )
+expand = true
+
+[node name="Button" type="Button" parent="MainHorizontal/LeftVertical/CenterContainer/Viewport"]
+margin_left = 20.0
+margin_top = 20.0
+custom_fonts/font = ExtResource( 2 )
+text = "BACK"
+icon = SubResource( 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoreAbilitySegment" type="HBoxContainer" parent="MainHorizontal/LeftVertical"]
+margin_top = 360.0
+margin_right = 800.0
+margin_bottom = 710.0
+grow_horizontal = 2
+rect_min_size = Vector2( 0, 330 )
+custom_constants/separation = 7
+
+[node name="Abilities" type="VBoxContainer" parent="MainHorizontal/LeftVertical/LoreAbilitySegment"]
+margin_right = 400.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 400, 350 )
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="MainHorizontal/LeftVertical/LoreAbilitySegment/Abilities"]
+margin_top = 42.0
+margin_right = 400.0
+margin_bottom = 71.0
+custom_fonts/font = ExtResource( 2 )
+text = "Abilities"
+align = 1
+valign = 1
+
+[node name="AbilityItem" parent="MainHorizontal/LeftVertical/LoreAbilitySegment/Abilities" instance=ExtResource( 7 )]
+margin_left = 0.0
+margin_top = 101.0
+margin_right = 400.0
+margin_bottom = 130.0
+
+[node name="AbilityItem2" parent="MainHorizontal/LeftVertical/LoreAbilitySegment/Abilities" instance=ExtResource( 7 )]
+margin_left = 0.0
+margin_top = 160.0
+margin_right = 400.0
+margin_bottom = 189.0
+
+[node name="AbilityItem3" parent="MainHorizontal/LeftVertical/LoreAbilitySegment/Abilities" instance=ExtResource( 7 )]
+margin_left = 0.0
+margin_top = 219.0
+margin_right = 400.0
+margin_bottom = 248.0
+
+[node name="AbilityItem4" parent="MainHorizontal/LeftVertical/LoreAbilitySegment/Abilities" instance=ExtResource( 7 )]
+margin_left = 0.0
+margin_top = 278.0
+margin_right = 400.0
+margin_bottom = 307.0
+
+[node name="Lore" type="RichTextLabel" parent="MainHorizontal/LeftVertical/LoreAbilitySegment"]
+margin_left = 407.0
+margin_right = 800.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 380, 300 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 3 )
+text = "Giotto is a Healer Spaceship designed by the Italians before The War started. The Italian engineers really did an outstanding job with this one. It utilizes second generation Gluon Weld Laser  “GW ” which is able to stich space craft holes bigger than a dinglebop from a distance of two moon years. Giotto has one more trick up its sleeve they don’t call these spaceships HP Wasps for nothing. That small healer packs a very powerful IP404 Thruster Engine which is capable of 5 tons fire spiting thrust at a flick of a switch."
+
+[node name="RightVertical" type="VBoxContainer" parent="MainHorizontal"]
+margin_left = 820.0
+margin_right = 1220.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 400, 700 )
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="MainHorizontal/RightVertical"]
+margin_right = 400.0
+
+[node name="ShipItem1" parent="MainHorizontal/RightVertical/Control" instance=ExtResource( 6 )]
+
+[node name="ShipItem2" parent="MainHorizontal/RightVertical/Control" instance=ExtResource( 8 )]
+margin_top = 180.0
+margin_bottom = 360.0
+
+[node name="ShipItem3" parent="MainHorizontal/RightVertical/Control" instance=ExtResource( 4 )]
+margin_top = 360.0
+margin_bottom = 540.0
+
+[node name="ShipItem4" parent="MainHorizontal/RightVertical/Control" instance=ExtResource( 5 )]
+margin_top = 540.0
+margin_bottom = 720.0
+[connection signal="pressed" from="MainHorizontal/LeftVertical/CenterContainer/Viewport/Button" to="." method="_on_Button_pressed"]

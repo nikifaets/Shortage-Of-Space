@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Interface/Resources/baloochettan.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Interface/Resources/baloochettan_description.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Interface/Components/ShipItemButton.gd" type="Script" id=3]
+
+[node name="ShipItem" type="Button"]
+margin_right = 400.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 400, 180 )
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+ship_type = "Ship1"
+
+[node name="VerticalContainer" type="VBoxContainer" parent="."]
+margin_top = 20.0
+margin_right = 400.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 400, 150 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="VerticalContainer"]
+margin_right = 400.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 1 )
+text = "Ship 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShortDescription" type="Label" parent="VerticalContainer"]
+margin_top = 33.0
+margin_right = 400.0
+margin_bottom = 94.0
+hint_tooltip = "Short description of the ship"
+custom_fonts/font = ExtResource( 2 )
+text = "Lorem ipsum dolor amet my ding dong is dingling on the dong, inb4 4 nice chicks."
+align = 1
+valign = 1
+autowrap = true

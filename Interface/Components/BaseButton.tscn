@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Interface/Resources/baloochettan.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Interface/Buttons/BaseButton.gd" type="Script" id=2]
+[ext_resource path="res://Interface/Components/BaseButton.gd" type="Script" id=2]
+
 
 [node name="MenuButton" type="Button"]
 margin_top = 50.0
