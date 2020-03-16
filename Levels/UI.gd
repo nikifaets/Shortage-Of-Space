@@ -3,8 +3,8 @@ extends Control
 var HealthBar = preload("HealthBar.tscn")
 
 var buttons = []
-var color_selected = Color(0.5, 0.5, 0.5, 1)
-var color_normal = Color(0.6, 0.6, 0.6, 1)
+var color_selected = Color(0.5, 0.1, 0.0, 1)
+var color_normal = Color(0.3, 0.1, 0.0, 1)
 var selected
 var units = {}
 
@@ -117,14 +117,10 @@ func on_button_released(button):
 func design_button(label, count):
 	
 	var button = Button.new()
-	var texture = ImageTexture.new()
-	var path = "res://Icons/" + label + ".png"
-	texture.load(path)
-	texture.set_size_override(Vector2(50,50))
 	
+	button.rect_min_size = Vector2(100,50)
 	var stylebox = design_stylebox(color_normal)
 	button.add_stylebox_override("normal", stylebox)
-	button.set_button_icon(texture)
 	button.text = label + ": " + str(count)
 		
 	return button

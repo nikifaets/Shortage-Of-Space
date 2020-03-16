@@ -4,6 +4,7 @@ var Giotto = preload("res://Character/Healer/Giotto/Giotto.tscn")
 var Leshy = preload("res://Character/Warrior/Leshy/Leshy.tscn")
 var Wendigo = preload("res://Character/Warrior/Wendigo/Wendigo.tscn")
 var Shanshen = preload("res://Character/Tank/Shanshen/Shanshen.tscn")
+var BackButton = preload("res://Interface/Components/MenuButtons/BackButton.tscn")
 
 var labels = {"Leshy" : Leshy, "Giotto" : Giotto, "Wendigo" : Wendigo, "Shanshen" : Shanshen}
 
@@ -23,6 +24,11 @@ func _ready():
 func _process(delta):
 	
 	handle_input()
+	
+	if enemies.size() == 0 or allies.size() == 0:
+		
+		var back_button = BackButton.instance()
+		$UI.add_child(back_button)
 
 func set_selected(label):
 	
